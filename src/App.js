@@ -1,13 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Home from "./components/Home/Home";
+import SavedTasbeeh from "./components/SavedTasbeeh/SavedTasbeeh";
+import CustomTasbeeh from "./components/CustomTasbeeh/CustomTasbeeh";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        Tasbeeh
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/savedtasbeeh" element={<SavedTasbeeh />} />
+            <Route exact path="/customtasbeeh" element={<CustomTasbeeh />} />
+          </Routes>
+        </header>
+      </div>
+    </Router>
   );
 }
 

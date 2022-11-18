@@ -1,16 +1,11 @@
+* {
+  --glow-color: rgb(217, 176, 255);
+  --glow-spread-color: rgba(191, 123, 255, 0.781);
+  --enhanced-glow-color: rgb(231, 206, 255);
+  --btn-color: rgb(100, 61, 136);
+}
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -24,15 +19,125 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.homne {
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+/* Button Primary */
+
+.BtnPrimary {
+  text-decoration: none;
+  position: absolute;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  font-family: inherit;
+  color: #fff;
+  width: 11rem;
+  height: 2.8rem;
+  line-height: 2em;
+  text-align: center;
+  background: linear-gradient(90deg, var(--btn-color), var(--glow-spread-color), var(--enhanced-glow-color), var(--btn-color));
+  background-size: 300%;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 1;
+  margin-top: .5rem;
+}
+
+.BtnPrimary:hover {
+  animation: ani 8s linear infinite;
+  border: none;
+}
+
+@keyframes ani {
+  0% {
+    background-position: 0%;
   }
-  to {
-    transform: rotate(360deg);
+
+  100% {
+    background-position: 400%;
+  }
+}
+
+.BtnPrimary:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+  background: linear-gradient(90deg, var(--btn-color), var(--glow-spread-color), var(--enhanced-glow-color), var(--btn-color));
+  background-size: 400%;
+  border-radius: 35px;
+  transition: 1s;
+}
+
+.BtnPrimary:hover::before {
+  filter: blur(20px);
+}
+
+.BtnPrimary:active {
+  background: linear-gradient(32deg, var(--btn-color), var(--glow-spread-color), var(--enhanced-glow-color), var(--btn-color));
+}
+
+/* Button Secondary */
+
+.btnSecondary {
+  border: 0.25em solid var(--glow-color);
+  padding: 1em 3.4em;
+  color: var(--glow-color);
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  background-color: var(--btn-color);
+  border-radius: 10rem;
+  outline: none;
+  box-shadow: 0 0 1em 0.25em var(--glow-color),
+    0 0 4em 1em var(--glow-spread-color),
+    inset 0 0 0.75em 0.25em var(--glow-color);
+  text-shadow: 0 0 0.5em var(--glow-color);
+  position: relative;
+  transition: all 0.3s;
+  margin-left: 12rem;
+  cursor: pointer;
+}
+
+.btnSecondary::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--glow-spread-color);
+  filter: blur(2em);
+  opacity: 0.7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
+
+.btnSecondary:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em 0.25em var(--glow-color),
+    0 0 4em 2em var(--glow-spread-color),
+    inset 0 0 0.75em 0.25em var(--glow-color);
+}
+
+.btnSecondary:active {
+  box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+    0 0 2.5em 2em var(--glow-spread-color),
+    inset 0 0 0.5em 0.25em var(--glow-color);
+}
+
+
+@media (max-width: 768px) {
+  .home {
+    display: flex;
+    flex-direction: column;
   }
 }
