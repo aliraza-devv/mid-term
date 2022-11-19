@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import BtnSubmit from "../Buttons/BtnSubmit";
 import { db } from "../../firebase";
 
 function CustomTasbeeh() {
   const [tasbeeh, setTasbeeh] = useState();
   const [tasbeehCount, setTasbeehCount] = useState();
-  
+  let navigate = useNavigate();
 
 
   const handleSubmit = (e) => {
@@ -25,6 +26,8 @@ function CustomTasbeeh() {
 
     setTasbeeh("");
     setTasbeehCount("");
+    navigate("/");
+
   };
 
   return (

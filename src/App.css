@@ -326,13 +326,98 @@ input:hover {
   opacity: 1;
 }
 
+.btnDisable {
+  display: none;
+}
+
+/* Loader */
+
+.spinner {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-left: -75px;
+}
+
+.spinner .span-loader {
+  position: absolute;
+  top: 50%;
+  left: var(--left);
+  width: 35px;
+  height: 7px;
+  background: var(--btn-color-2);
+  animation: dominos 1s ease infinite;
+  box-shadow: 2px 2px 3px 0px black;
+}
+
+.spinner .span-loader:nth-child(1) {
+  --left: 80px;
+  animation-delay: 0.125s;
+}
+
+.spinner .span-loader:nth-child(2) {
+  --left: 70px;
+  animation-delay: 0.3s;
+}
+
+.spinner .span-loader:nth-child(3) {
+  left: 60px;
+  animation-delay: 0.425s;
+}
+
+.spinner .span-loader:nth-child(4) {
+  animation-delay: 0.54s;
+  left: 50px;
+}
+
+.spinner .span-loader:nth-child(5) {
+  animation-delay: 0.665s;
+  left: 40px;
+}
+
+.spinner .span-loader:nth-child(6) {
+  animation-delay: 0.79s;
+  left: 30px;
+}
+
+.spinner .span-loader:nth-child(7) {
+  animation-delay: 0.915s;
+  left: 20px;
+}
+
+.spinner .span-loader:nth-child(8) {
+  left: 10px;
+}
+
+@keyframes dominos {
+  50% {
+    opacity: 0.7;
+  }
+
+  75% {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+
+  80% {
+    opacity: 1;
+  }
+}
 
 .allTasbeeh{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 50%;
   cursor: pointer;
 }
 
-.tasbeeh-detaila{
+.tasbeeh-details{
   display: flex;
   gap: 70%;
   justify-content: center;
@@ -347,11 +432,12 @@ input:hover {
   gap: 5%;
   justify-content: center;
   width: 100%;
+  margin-top: 2rem;
 }
 
-.add{
+/* .add{
   width: 3%;
   padding: .6rem;
   border: none;
   background-color: var(--enhanced-glow-color);
-}
+} */

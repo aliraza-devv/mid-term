@@ -1,18 +1,23 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { db } from "../../firebase";
+import Tasbeeh from "../Tasbeeh/Tasbeeh";
+import Loader from "../Loader/Loader";
 
 function SavedTasbeeh() {
   const [tasbeeh, setTasbeeh] = useState([]);
-  let navigate = useNavigate();
+  const [loader, setLoader] = useState(false);
+  const [show, setShow] = useState(false);
+  // let navigate = useNavigate();
 
-  const routeStart = () => {
-    navigate("/tasbeeh");
-  };
-
+  // const routeStart = () => {
+  //   navigate("/");
+  // };
 
   function fetchAll(e) {
     e.preventDefault();
+    setLoader(true);
+
     db.collection("tasbeeh")
       .get()
       .then((snapshot) => {
@@ -21,6 +26,7 @@ function SavedTasbeeh() {
             setTasbeeh((prev) => {
               return [...prev, doc.data()];
             });
+            setLoader(false);
           });
         }
       });
@@ -28,17 +34,28 @@ function SavedTasbeeh() {
 
   return (
     <div className="allTasbeeh">
-        {tasbeeh.map((tasb) => {
+      {loader ? (
+        <Loader />
+      ) : (
+        tasbeeh.map((tasb) => {
           return (
-            <div className="tasbeeh-detaila" key={tasb.tasbeeh} onClick={() => routeStart()}>
-              <h4>{tasb.tasbeeh}</h4>
-              <h4>{tasb.tasbeehCount}</h4>
-            </div>
+            <>
+              <div
+                className="tasbeeh-details"
+                key={tasb.tasbeeh}
+                onClick={() => setShow(true)}
+              >
+                <h4>{tasb.tasbeeh}</h4>
+                <h4>{tasb.tasbeehCount}</h4>
+              </div>
+            </>
           );
-        })}
-        <button className="btnStart" onClick={fetchAll}>
-          <span className="label">Show Tasbeeh</span>
-        </button>
+        })
+        )}
+        {show ? <Tasbeeh /> : null}
+      <button className={loader ? "btnDisable" : "btnStart"} onClick={fetchAll}>
+        <span className="label">Show Tasbeeh</span>
+      </button>
     </div>
   );
 }
