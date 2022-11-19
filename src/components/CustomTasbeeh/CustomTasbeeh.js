@@ -33,7 +33,7 @@ function CustomTasbeeh() {
   return (
     <>
       <div className="card">
-        <h1 className="heading-secondary">Add your tasbeeh</h1>
+        <h1 className="heading-secondary">Add your Tasbeeh</h1>
         <form className="form" onSubmit={handleSubmit}>
           <input
             id=""
@@ -50,7 +50,7 @@ function CustomTasbeeh() {
             value={tasbeehCount}
             onChange={(e) => setTasbeehCount(e.target.value)}
             name="tasbeehCount"
-            placeholder="tasbeehCount"
+            placeholder="Add Tasbeeh Limit"
             type="text"
             className="input"
             required
