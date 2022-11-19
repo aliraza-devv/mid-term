@@ -1,7 +1,7 @@
 * {
-  --glow-color: #d9b0ff;
+  --glow-color: #dab3ff;
   --glow-spread-color: #bf7bffc7;
-  --enhanced-glow-color: #e7ceff;
+  --enhanced-glow-color: #e6ccff;
   --btn-color: #643d88;
   --btn-color-2: #c180ff;
 }
@@ -423,8 +423,10 @@ input:hover {
   justify-content: center;
   color: white;
   width: 100%;
-  border: solid 1px var(--enhanced-glow-color);
-  background-color: var(--btn-color);
+  border-radius: .5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, var(--btn-color) 20%, var(--glow-spread-color) 100%);
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
 }
 
 .tasbeehCount {
@@ -435,9 +437,10 @@ input:hover {
   margin-top: 2rem;
 }
 
-/* .add{
-  width: 3%;
-  padding: .6rem;
+.add {
+  background-color: var(--btn-color);
   border: none;
-  background-color: var(--enhanced-glow-color);
-} */
+  color: white;
+  width: 5%;
+  cursor: pointer;
+}
