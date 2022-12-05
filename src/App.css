@@ -422,7 +422,7 @@ input:hover {
 
 .tasbeeh-details{
   display: flex;
-  gap: 70%;
+  gap: 50%;
   justify-content: center;
   color: white;
   width: 100%;
@@ -444,6 +444,6 @@ input:hover {
   background-color: var(--btn-color);
   border: none;
   color: white;
-  width: 5%;
+  width: 10%;
   cursor: pointer;
 }
