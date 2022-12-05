@@ -1,5 +1,31 @@
 # Getting Started with Create React App
 
+# Before Refresh
+
+<img src="https://github.com/aliraza-devv/mid-term/blob/main/Output/before-refresh-count-state.png" />
+
+# After Refresh
+
+<img src="https://github.com/aliraza-devv/mid-term/blob/main/Output/after-refresh-state.png" />
+
+# Code of shared preference
+
+<img src="https://github.com/aliraza-devv/mid-term/blob/main/Output/saving-state-code.png" />
+
+# Video
+
+<img src="https://github.com/aliraza-devv/mid-term/blob/main/Output/video.gif" />
+
+# Images
+
+<img src="https://github.com/aliraza-devv/mid-term/blob/main/Output/1.png" />
+<img src="https://github.com/aliraza-devv/mid-term/blob/main/Output/2.png" />
+<img src="https://github.com/aliraza-devv/mid-term/blob/main/Output/3.png" />
+<img src="https://github.com/aliraza-devv/mid-term/blob/main/Output/4.png" />
+<img src="https://github.com/aliraza-devv/mid-term/blob/main/Output/5.png" />
+<img src="https://github.com/aliraza-devv/mid-term/blob/main/Output/6.png" />
+<img src="https://github.com/aliraza-devv/mid-term/blob/main/Output/7.png" />
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
